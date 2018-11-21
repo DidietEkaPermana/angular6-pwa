@@ -1,0 +1,20 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>PO Item</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<main>
+  <mat-card *ngFor="let item of items">
+    <mat-card-header>
+      <mat-card-title>{{item.partNo}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      Qty: {{item.qtyOrder}}/{{item.qtyAvailable}}<br>
+      Desc: {{item.partDescription}}<br>
+      Status: {{item.itemStatus}}<br>
+    </mat-card-content>
+    <mat-card-actions>
+      <a mat-raised-button (click)="view(item.orderItemId)" color="primary">More</a>
+    </mat-card-actions>
+  </mat-card>
+</main>

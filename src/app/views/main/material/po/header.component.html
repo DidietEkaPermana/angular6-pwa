@@ -1,0 +1,20 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>PO Header</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<main>
+  <mat-card *ngFor="let item of items">
+    <mat-card-header>
+      <mat-card-title>{{item.ponumber}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      #Order: {{item.orderNumber}}<br>
+      Date: {{item.orderDate}}<br>
+      ETA: {{item.eta}}<br>
+    </mat-card-content>
+    <mat-card-actions>
+      <a mat-raised-button (click)="view(item.orderId)" color="primary">More</a>
+    </mat-card-actions>
+  </mat-card>
+</main>
